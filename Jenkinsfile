@@ -5,8 +5,8 @@ pipeline {
             steps {
                 script{
                      def mvnHome =  tool name: 'maven3', type: 'maven'   
-                    sh "${mvnHome}/bin/mvn clean package"
-	                sh 'mv target/myweb*.war target/newapp.war'
+                    sh "${mvnHome}/bin/mvn clean package"    or we can use install package
+	                sh 'mv target/myweb*.war target/newapp.war'  -->create artifacts and will store -->target/myweb*.war(in pom.xml file we are mentioning this myweb*.war name)  this path so we are telling to paste this artifacts to-->target/newapp.war 
                 }
             }
         }
